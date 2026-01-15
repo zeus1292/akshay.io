@@ -17,7 +17,7 @@ export function ModeToggle({ mode, onToggle, className }: ModeToggleProps) {
       <span
         className={cn(
           "text-sm font-medium transition-colors duration-300",
-          mode === "work" ? "text-electric" : "text-dark-400"
+          mode === "work" ? "text-accent-indigo" : "text-cream-400"
         )}
       >
         Work
@@ -26,19 +26,18 @@ export function ModeToggle({ mode, onToggle, className }: ModeToggleProps) {
         onClick={() => onToggle(mode === "work" ? "play" : "work")}
         className={cn(
           "relative w-16 h-8 rounded-full p-1 transition-all duration-300",
-          "bg-dark-800 border border-dark-700",
-          mode === "work"
-            ? "shadow-[0_0_20px_-5px_rgba(59,130,246,0.5)]"
-            : "shadow-[0_0_20px_-5px_rgba(249,115,22,0.5)]"
+          "bg-cream-200 border border-cream-300",
+          "hover:border-cream-400",
+          "shadow-sm"
         )}
         aria-label={`Switch to ${mode === "work" ? "play" : "work"} mode`}
       >
         <motion.div
           className={cn(
-            "absolute top-1 w-6 h-6 rounded-full flex items-center justify-center",
+            "absolute top-1 w-6 h-6 rounded-full flex items-center justify-center shadow-md",
             mode === "work"
-              ? "bg-gradient-to-br from-electric to-grape"
-              : "bg-gradient-to-br from-sunset to-grape"
+              ? "bg-gradient-to-br from-accent-indigo to-accent-violet"
+              : "bg-gradient-to-br from-accent-coral to-pastel-pink-dark"
           )}
           animate={{
             x: mode === "work" ? 0 : 32,
@@ -59,7 +58,7 @@ export function ModeToggle({ mode, onToggle, className }: ModeToggleProps) {
       <span
         className={cn(
           "text-sm font-medium transition-colors duration-300",
-          mode === "play" ? "text-sunset" : "text-dark-400"
+          mode === "play" ? "text-accent-coral" : "text-cream-400"
         )}
       >
         Play

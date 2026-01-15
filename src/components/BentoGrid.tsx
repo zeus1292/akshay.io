@@ -17,6 +17,8 @@ import {
   Database,
   Cloud,
   Sparkles,
+  MapPin,
+  Plane,
 } from "lucide-react";
 
 interface BentoGridProps {
@@ -27,60 +29,71 @@ const workCards = {
   professional: {
     title: "The TL;DR",
     icon: Briefcase,
-    gradient: "from-electric to-electric/50",
-    glowColor: "glow-electric",
+    bgColor: "bg-pastel-blue",
+    borderColor: "border-pastel-blue-dark/30",
+    iconBg: "bg-accent-indigo",
     content: {
       headline: "Enterprise AI Product Leader",
       bullets: [
-        "Led AI/ML product initiatives at Fortune 500 companies",
-        "Shipped products used by 10,000+ enterprise users",
-        "Expert in translating complex AI into user value",
+        "10+ years shipping AI products at S&P Global, C3 AI & startups",
+        "Built RAG pipelines and Agentic workflows serving Fortune 500 clients",
+        "Columbia Business Analytics grad who turns complex AI into real impact",
       ],
       companies: [
-        { name: "S&P Global", role: "Senior Product Manager" },
+        { name: "S&P Global", role: "Sr. Product Manager" },
         { name: "C3 AI", role: "Product Manager" },
-        { name: "Your Company", role: "Previous Role" },
+        { name: "Cowen & Co", role: "Analyst" },
       ],
     },
   },
   personal: {
     title: "The Origin Story",
     icon: Heart,
-    gradient: "from-grape to-grape/50",
-    glowColor: "glow-grape",
+    bgColor: "bg-pastel-pink",
+    borderColor: "border-pastel-pink-dark/30",
+    iconBg: "bg-accent-coral",
     content: {
-      headline: "From Curious Kid to AI Builder",
+      headline: "From VIT to Columbia to AI",
       story:
-        "Started coding at 12, fell in love with the intersection of technology and human experience. Today, I bridge the gap between cutting-edge AI research and products people actually want to use.",
-      passions: ["Human-centered AI", "Product-led growth", "Data storytelling"],
+        "Started as a software engineer in India, built my way up through S&P Global, then pivoted to pursue my Master's at Columbia. Now I help enterprises unlock value from AI—from research tools to agentic workflows.",
+      passions: ["Human-centered AI", "0→1 Products", "Data Storytelling"],
     },
   },
   skills: {
     title: "The Toolkit",
     icon: Code2,
-    gradient: "from-sunset to-sunset/50",
-    glowColor: "glow-sunset",
+    bgColor: "bg-pastel-purple",
+    borderColor: "border-pastel-purple-dark/30",
+    iconBg: "bg-accent-violet",
     content: {
       categories: [
         {
           name: "AI/ML",
           icon: Brain,
-          skills: ["LLMs", "RAG", "Fine-tuning", "Prompt Engineering"],
+          color: "text-accent-violet",
+          bgColor: "bg-pastel-purple/50",
+          skills: ["RAG", "LangGraph", "crewAI", "Fine-tuning"],
         },
         {
           name: "Infrastructure",
           icon: Cloud,
-          skills: ["Docker", "Kubernetes", "AWS", "GCP"],
+          color: "text-accent-indigo",
+          bgColor: "bg-pastel-blue/50",
+          skills: ["LangSmith", "AWS", "Azure", "Docker"],
         },
         {
           name: "Data",
           icon: Database,
-          skills: ["SQL", "Python", "Spark", "dbt"],
+          color: "text-accent-emerald",
+          bgColor: "bg-pastel-mint/50",
+          skills: ["SQL", "Python", "Snowflake", "dbt"],
         },
         {
           name: "Product",
           icon: Cpu,
-          skills: ["Figma", "Analytics", "A/B Testing", "Roadmapping"],
+          color: "text-accent-coral",
+          bgColor: "bg-pastel-peach/50",
+          skills: ["Figma", "Jira", "A/B Testing", "Roadmapping"],
         },
       ],
     },
@@ -91,60 +104,71 @@ const playCards = {
   professional: {
     title: "The Resume Version",
     icon: Coffee,
-    gradient: "from-electric to-electric/50",
-    glowColor: "glow-electric",
+    bgColor: "bg-pastel-yellow",
+    borderColor: "border-pastel-yellow-dark/30",
+    iconBg: "bg-accent-coral",
     content: {
       headline: "Professional Meeting Attendee",
       bullets: [
         "Expert at nodding thoughtfully in Zoom calls",
-        "Can turn any feature request into a Jira epic",
-        "Fluent in corporate buzzword bingo",
+        "Can turn any stakeholder request into a Jira epic",
+        "Survived 5 years of enterprise software politics",
       ],
       companies: [
         { name: "S&P Global", role: "Slide Deck Artisan" },
         { name: "C3 AI", role: "AI Explainer-in-Chief" },
-        { name: "Your Company", role: "Chief Coffee Drinker" },
+        { name: "Cowen", role: "Excel Wizard" },
       ],
     },
   },
   personal: {
     title: "The Real Me",
     icon: Gamepad2,
-    gradient: "from-grape to-grape/50",
-    glowColor: "glow-grape",
+    bgColor: "bg-pastel-mint",
+    borderColor: "border-pastel-mint-dark/30",
+    iconBg: "bg-accent-emerald",
     content: {
-      headline: "Part-Time Human, Full-Time Nerd",
+      headline: "Adrenaline Junkie & Coffee Snob",
       story:
-        "When not debugging production issues at 2am, you'll find me exploring new games, going down YouTube rabbit holes, or convincing my friends that AI won't take their jobs (probably).",
-      passions: ["Gaming marathons", "Sci-fi everything", "Dad jokes about AI"],
+        "When not shipping AI products, you'll find me skydiving, catching waves, or over-engineering my coffee setup. Columbia gave me the degree, but surfing taught me the real lessons.",
+      passions: ["Skydiving", "Surfing", "Over-caffeination"],
     },
   },
   skills: {
     title: "The Secret Powers",
     icon: Sparkles,
-    gradient: "from-sunset to-sunset/50",
-    glowColor: "glow-sunset",
+    bgColor: "bg-pastel-lavender",
+    borderColor: "border-pastel-purple-dark/30",
+    iconBg: "bg-accent-violet",
     content: {
       categories: [
         {
           name: "Survival",
           icon: Coffee,
+          color: "text-accent-coral",
+          bgColor: "bg-pastel-peach/50",
           skills: ["Coffee brewing", "Deadline dodging", "Scope negotiation", "Meeting escape"],
         },
         {
-          name: "Entertainment",
-          icon: Gamepad2,
-          skills: ["Boss fights", "Speedruns", "Achievement hunting", "Rage quitting"],
+          name: "Adventure",
+          icon: Plane,
+          color: "text-accent-indigo",
+          bgColor: "bg-pastel-blue/50",
+          skills: ["Skydiving", "Surfing", "Hiking", "Getting lost"],
         },
         {
           name: "Creative",
           icon: Music,
+          color: "text-accent-violet",
+          bgColor: "bg-pastel-purple/50",
           skills: ["Playlist curation", "Meme analysis", "GIF selection", "Emoji fluency"],
         },
         {
           name: "Learning",
           icon: Book,
-          skills: ["Wikipedia diving", "Tutorial hoarding", "Side project starting", "Never finishing"],
+          color: "text-accent-emerald",
+          bgColor: "bg-pastel-mint/50",
+          skills: ["Wikipedia diving", "Tutorial hoarding", "Side projects", "Never finishing"],
         },
       ],
     },
@@ -177,7 +201,7 @@ export function BentoGrid({ mode }: BentoGridProps) {
   const cards = mode === "work" ? workCards : playCards;
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -187,10 +211,16 @@ export function BentoGrid({ mode }: BentoGridProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            {mode === "work" ? "At a Glance" : "The Fun Version"}
+          <motion.span
+            className="inline-block px-4 py-1.5 rounded-full bg-pastel-purple/50 text-accent-violet text-sm font-medium mb-4"
+            whileHover={{ scale: 1.05 }}
+          >
+            {mode === "work" ? "Quick Overview" : "The Fun Stuff"}
+          </motion.span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-cream-800 mb-4">
+            {mode === "work" ? "At a Glance" : "The Unfiltered Version"}
           </h2>
-          <p className="text-dark-400 max-w-2xl mx-auto">
+          <p className="text-cream-500 max-w-2xl mx-auto">
             {mode === "work"
               ? "A quick overview of my professional journey, passions, and technical expertise."
               : "Everything they don't put on LinkedIn (for good reason)."}
@@ -205,12 +235,15 @@ export function BentoGrid({ mode }: BentoGridProps) {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Card 1: Professional */}
+          {/* Card 1: Professional - spans 2 columns */}
           <motion.div
             variants={cardVariants}
             className={cn(
-              "lg:col-span-2 rounded-3xl glass noise overflow-hidden group",
-              cards.professional.glowColor
+              "lg:col-span-2 rounded-3xl overflow-hidden",
+              cards.professional.bgColor,
+              "border",
+              cards.professional.borderColor,
+              "shadow-sm hover:shadow-md transition-shadow"
             )}
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ duration: 0.3 }}
@@ -219,18 +252,18 @@ export function BentoGrid({ mode }: BentoGridProps) {
               <div className="flex items-center gap-3 mb-6">
                 <div
                   className={cn(
-                    "p-3 rounded-2xl bg-gradient-to-br",
-                    cards.professional.gradient
+                    "p-3 rounded-2xl shadow-sm",
+                    cards.professional.iconBg
                   )}
                 >
                   <cards.professional.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-cream-800">
                   {cards.professional.title}
                 </h3>
               </div>
 
-              <h4 className="text-2xl font-bold gradient-text mb-4">
+              <h4 className="text-2xl font-bold text-cream-800 mb-4">
                 {cards.professional.content.headline}
               </h4>
 
@@ -238,13 +271,13 @@ export function BentoGrid({ mode }: BentoGridProps) {
                 {cards.professional.content.bullets.map((bullet, i) => (
                   <motion.li
                     key={i}
-                    className="flex items-start gap-3 text-dark-300"
+                    className="flex items-start gap-3 text-cream-600"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.1 }}
                   >
-                    <Rocket className="w-5 h-5 text-electric mt-0.5 flex-shrink-0" />
+                    <Rocket className="w-5 h-5 text-accent-indigo mt-0.5 flex-shrink-0" />
                     {bullet}
                   </motion.li>
                 ))}
@@ -254,14 +287,14 @@ export function BentoGrid({ mode }: BentoGridProps) {
                 {cards.professional.content.companies.map((company, i) => (
                   <motion.div
                     key={i}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-dark-800/50 border border-dark-700"
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-white/80 shadow-sm"
                     whileHover={{
                       scale: 1.05,
-                      borderColor: "rgba(59, 130, 246, 0.5)",
+                      backgroundColor: "rgba(255,255,255,0.9)",
                     }}
                   >
-                    <Building2 className="w-4 h-4 text-electric" />
-                    <span className="text-sm text-white font-medium">
+                    <Building2 className="w-4 h-4 text-accent-indigo" />
+                    <span className="text-sm text-cream-700 font-medium">
                       {company.name}
                     </span>
                   </motion.div>
@@ -274,8 +307,11 @@ export function BentoGrid({ mode }: BentoGridProps) {
           <motion.div
             variants={cardVariants}
             className={cn(
-              "rounded-3xl glass noise overflow-hidden group",
-              cards.personal.glowColor
+              "rounded-3xl overflow-hidden",
+              cards.personal.bgColor,
+              "border",
+              cards.personal.borderColor,
+              "shadow-sm hover:shadow-md transition-shadow"
             )}
             whileHover={{ scale: 1.02, y: -5 }}
             transition={{ duration: 0.3 }}
@@ -284,22 +320,22 @@ export function BentoGrid({ mode }: BentoGridProps) {
               <div className="flex items-center gap-3 mb-6">
                 <div
                   className={cn(
-                    "p-3 rounded-2xl bg-gradient-to-br",
-                    cards.personal.gradient
+                    "p-3 rounded-2xl shadow-sm",
+                    cards.personal.iconBg
                   )}
                 >
                   <cards.personal.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-cream-800">
                   {cards.personal.title}
                 </h3>
               </div>
 
-              <h4 className="text-xl font-bold text-white mb-3">
+              <h4 className="text-xl font-bold text-cream-800 mb-3">
                 {cards.personal.content.headline}
               </h4>
 
-              <p className="text-dark-300 leading-relaxed mb-6 flex-grow">
+              <p className="text-cream-600 leading-relaxed mb-6 flex-grow">
                 {cards.personal.content.story}
               </p>
 
@@ -307,7 +343,7 @@ export function BentoGrid({ mode }: BentoGridProps) {
                 {cards.personal.content.passions.map((passion, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full bg-grape/20 text-grape-300 text-sm border border-grape/30"
+                    className="px-3 py-1.5 rounded-full bg-white/60 text-cream-700 text-sm border border-white/80 shadow-sm"
                   >
                     {passion}
                   </span>
@@ -316,27 +352,30 @@ export function BentoGrid({ mode }: BentoGridProps) {
             </div>
           </motion.div>
 
-          {/* Card 3: Skills */}
+          {/* Card 3: Skills - spans all 3 columns */}
           <motion.div
             variants={cardVariants}
             className={cn(
-              "lg:col-span-3 rounded-3xl glass noise overflow-hidden group",
-              cards.skills.glowColor
+              "lg:col-span-3 rounded-3xl overflow-hidden",
+              cards.skills.bgColor,
+              "border",
+              cards.skills.borderColor,
+              "shadow-sm hover:shadow-md transition-shadow"
             )}
-            whileHover={{ scale: 1.01, y: -5 }}
+            whileHover={{ scale: 1.01, y: -3 }}
             transition={{ duration: 0.3 }}
           >
             <div className="p-8">
               <div className="flex items-center gap-3 mb-8">
                 <div
                   className={cn(
-                    "p-3 rounded-2xl bg-gradient-to-br",
-                    cards.skills.gradient
+                    "p-3 rounded-2xl shadow-sm",
+                    cards.skills.iconBg
                   )}
                 >
                   <cards.skills.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-semibold text-cream-800">
                   {cards.skills.title}
                 </h3>
               </div>
@@ -345,7 +384,10 @@ export function BentoGrid({ mode }: BentoGridProps) {
                 {cards.skills.content.categories.map((category, i) => (
                   <motion.div
                     key={i}
-                    className="p-4 rounded-2xl bg-dark-800/50 border border-dark-700 hover:border-sunset/50 transition-colors"
+                    className={cn(
+                      "p-5 rounded-2xl bg-white/50 border border-white/60 shadow-sm",
+                      "hover:bg-white/70 transition-colors"
+                    )}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -353,8 +395,10 @@ export function BentoGrid({ mode }: BentoGridProps) {
                     whileHover={{ y: -3 }}
                   >
                     <div className="flex items-center gap-2 mb-4">
-                      <category.icon className="w-5 h-5 text-sunset" />
-                      <span className="font-semibold text-white">
+                      <div className={cn("p-2 rounded-lg", category.bgColor)}>
+                        <category.icon className={cn("w-5 h-5", category.color)} />
+                      </div>
+                      <span className="font-semibold text-cream-800">
                         {category.name}
                       </span>
                     </div>
@@ -362,7 +406,7 @@ export function BentoGrid({ mode }: BentoGridProps) {
                       {category.skills.map((skill, j) => (
                         <motion.span
                           key={j}
-                          className="px-2 py-1 rounded-md bg-dark-900/50 text-dark-300 text-xs border border-dark-700 hover:border-sunset/30 hover:text-sunset-300 transition-colors cursor-default"
+                          className="px-2.5 py-1 rounded-lg bg-white/70 text-cream-600 text-xs border border-cream-200 hover:border-cream-300 transition-colors cursor-default shadow-sm"
                           whileHover={{ scale: 1.05 }}
                         >
                           {skill}
