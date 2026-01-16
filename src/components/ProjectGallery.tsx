@@ -40,67 +40,67 @@ interface Project {
 
 const workProjects: Project[] = [
   {
-    id: "ai-research-tool",
-    title: "AI-Powered Research Tool",
+    id: "natural-language-screener",
+    title: "Natural Language Screener",
     subtitle: "S&P Global",
     description:
-      "Led product development for an AI research assistant that revolutionized how financial analysts discover and synthesize market intelligence.",
+      "Built an AI-powered screening tool that lets financial analysts query complex datasets using plain English instead of writing SQL or using clunky filter UIs.",
     problem:
-      "Financial analysts spent 60% of their time manually searching through millions of documents, transcripts, and filings to find relevant insights.",
+      "Analysts needed to screen thousands of companies based on complex criteria, but existing tools required technical expertise or multiple manual steps.",
     solution:
-      "Built a RAG-powered research tool with semantic search, automated summarization, and citation tracking. Implemented LangGraph for multi-step reasoning workflows.",
-    impact: "Reduced research time by 70%, adopted by 500+ analysts across global teams",
-    techStack: ["RAG", "LangGraph", "Python", "PostgreSQL", "React", "AWS"],
+      "Developed a natural language interface powered by LLMs that translates user queries into structured filters, with smart suggestions and query refinement.",
+    impact: "Reduced screening time from hours to minutes, adopted across multiple analyst teams",
+    techStack: ["LLMs", "RAG", "Python", "SQL", "React", "AWS"],
     color: "bg-pastel-blue",
+    icon: Brain,
+  },
+  {
+    id: "cowen-analytics",
+    title: "Analytics Engine",
+    subtitle: "Cowen & Co",
+    description:
+      "Designed and built a comprehensive analytics platform for investment research, enabling data-driven insights for equity research analysts.",
+    problem:
+      "Research analysts relied on fragmented data sources and manual Excel workflows, making it difficult to generate timely, accurate insights.",
+    solution:
+      "Created a unified analytics engine with automated data pipelines, interactive dashboards, and custom reporting capabilities for research teams.",
+    impact: "Streamlined research workflows, improved data accuracy, supported key investment decisions",
+    techStack: ["Python", "SQL", "Tableau", "Excel VBA", "Data Modeling"],
+    color: "bg-pastel-purple",
     icon: BarChart3,
   },
   {
-    id: "agentic-platform",
-    title: "Agentic Workflow Platform",
-    subtitle: "C3 AI",
+    id: "research-lens",
+    title: "Research Lens",
+    subtitle: "Personal Project",
     description:
-      "Designed and shipped an enterprise platform enabling teams to build, deploy, and monitor AI agents for complex business processes.",
+      "An AI-powered research aggregator that scans and synthesizes content from arXiv and TechCrunch to surface relevant AI/ML papers and startup news.",
     problem:
-      "Enterprises wanted to automate complex multi-step processes but struggled with reliability, observability, and governance of AI agents.",
+      "Keeping up with the latest AI research and startup news requires scanning multiple sources daily—time-consuming and easy to miss important developments.",
     solution:
-      "Created a no-code agent builder with crewAI integration, LangSmith observability, human-in-the-loop checkpoints, and enterprise-grade security controls.",
-    impact: "Enabled 10+ Fortune 500 clients to deploy production AI agents",
-    techStack: ["crewAI", "LangSmith", "Python", "Azure", "React", "Docker"],
-    color: "bg-pastel-purple",
-    icon: Rocket,
-  },
-  {
-    id: "data-platform",
-    title: "Market Data Platform",
-    subtitle: "S&P Global",
-    description:
-      "Spearheaded the modernization of legacy data infrastructure into a scalable, real-time market data platform serving global clients.",
-    problem:
-      "Legacy systems couldn't handle growing data volumes. Clients experienced delays and data quality issues impacting trading decisions.",
-    solution:
-      "Architected a modern data platform with real-time streaming, automated quality checks, and self-service analytics powered by Snowflake and dbt.",
-    impact: "99.9% uptime, 10x faster data delivery, $2M annual cost savings",
-    techStack: ["Snowflake", "dbt", "Python", "Kafka", "SQL", "Looker"],
+      "Built an automated pipeline that fetches papers from arXiv and articles from TechCrunch, uses LLMs to summarize and categorize content, and delivers personalized digests.",
+    impact: "Daily curated insights, never miss important AI developments",
+    techStack: ["Python", "LangChain", "OpenAI", "arXiv API", "Web Scraping"],
     color: "bg-pastel-mint",
-    icon: Users,
+    icon: Rocket,
   },
 ];
 
 // Personal projects and side hustles for Play mode
 const playProjects: Project[] = [
   {
-    id: "ai-dungeon-master",
-    title: "AI Dungeon Master",
-    subtitle: "Personal Project",
+    id: "portfolio-website",
+    title: "This Website",
+    subtitle: "The One You're Looking At",
     description:
-      "Built an AI-powered D&D campaign generator that creates dynamic storylines, NPCs, and encounters. Because finding a DM who shows up consistently is harder than fine-tuning GPT-4.",
+      "A bento-box style portfolio with Work/Play modes, pixelated background animations, photo galleries, and a mini-game. Because a plain resume is boring.",
     problem:
-      "My D&D group kept losing dungeon masters to 'real life responsibilities.' The audacity.",
+      "Needed a portfolio that shows personality, not just a list of jobs. Also wanted an excuse to over-engineer something fun.",
     solution:
-      "Created an LLM-powered DM that never cancels, never forgets the plot, and doesn't judge when you try to seduce the dragon.",
-    impact: "3 successful campaigns, 0 scheduling conflicts, 1 very confused AI dragon",
-    techStack: ["GPT-4", "LangChain", "React", "Supabase", "Tears of Joy"],
-    color: "bg-pastel-purple",
+      "Built a fully interactive site with Framer Motion animations, canvas-based pixel art, a PM Hustle mini-game, and dual-mode content switching.",
+    impact: "You're here, so it worked. Hire me?",
+    techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Canvas API"],
+    color: "bg-pastel-pink",
     icon: Sparkles,
     links: { github: "#" },
   },
@@ -351,23 +351,6 @@ export function ProjectGallery({ mode }: ProjectGalleryProps) {
           ))}
         </motion.div>
 
-        {/* View More CTA */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-        >
-          <motion.button
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/70 border border-cream-200 text-cream-600 font-medium hover:bg-white hover:border-cream-300 transition-colors shadow-sm"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span>{mode === "work" ? "View All Projects" : "See More Chaos"}</span>
-            <ExternalLink className="w-4 h-4" />
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );

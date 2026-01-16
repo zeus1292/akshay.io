@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ModeToggle } from "@/components/ui/toggle";
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Rocket, Coffee, Gamepad2, MapPin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Coffee, MapPin } from "lucide-react";
 
 interface HeroProps {
   mode: "work" | "play";
@@ -15,8 +14,6 @@ const workContent = {
   subheadline: "& Builder",
   description:
     "10+ years building AI-powered products at S&P Global, C3 AI, and beyond. I turn complex AI capabilities into enterprise solutions that drive real business impact—from RAG pipelines to Agentic workflows.",
-  cta: "View My Work",
-  ctaIcon: Rocket,
   badge: "Open to opportunities",
   location: "Foster City, CA",
 };
@@ -26,8 +23,6 @@ const playContent = {
   subheadline: "& AI Whisperer",
   description:
     "Columbia grad who somehow convinced Fortune 500 companies to let me play with their data. When I'm not shipping AI products, I'm probably skydiving, surfing, or over-engineering my coffee setup.",
-  cta: "See the Fun Stuff",
-  ctaIcon: Gamepad2,
   badge: "Probably caffeinated",
   location: "Bay Area, CA",
 };
@@ -73,7 +68,6 @@ const FloatingBlobs = () => (
 
 export function Hero({ mode, onModeToggle }: HeroProps) {
   const content = mode === "work" ? workContent : playContent;
-  const CtaIcon = content.ctaIcon;
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -168,31 +162,6 @@ export function Hero({ mode, onModeToggle }: HeroProps) {
           {content.description}
         </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
-          <Button
-            size="lg"
-            variant={mode === "work" ? "default" : "playful"}
-            className="group"
-          >
-            <CtaIcon className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
-            {content.cta}
-          </Button>
-          <Button
-            size="lg"
-            variant="secondary"
-            onClick={() => window.location.href = "mailto:ak4271@columbia.edu"}
-          >
-            <Mail className="w-5 h-5" />
-            Get in Touch
-          </Button>
-        </motion.div>
-
         {/* Social Links */}
         <motion.div
           className="mt-12 flex items-center justify-center gap-4"
@@ -201,7 +170,7 @@ export function Hero({ mode, onModeToggle }: HeroProps) {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           {[
-            { icon: Github, href: "https://github.com/akshaykumar-92", label: "GitHub" },
+            { icon: Github, href: "https://github.com/zeus1292", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/akshaykumar-92", label: "LinkedIn" },
             { icon: Mail, href: "mailto:ak4271@columbia.edu", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (

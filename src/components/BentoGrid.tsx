@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import {
   Briefcase,
@@ -19,6 +21,8 @@ import {
   Sparkles,
   MapPin,
   Plane,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 interface BentoGridProps {
@@ -130,8 +134,13 @@ const playCards = {
     content: {
       headline: "Adrenaline Junkie & Coffee Snob",
       story:
-        "When not shipping AI products, you'll find me skydiving, catching waves, or over-engineering my coffee setup. Columbia gave me the degree, but surfing taught me the real lessons.",
-      passions: ["Skydiving", "Surfing", "Over-caffeination"],
+        "When not shipping AI products, you'll find me skydiving, catching waves, or hiking to the top of something that looks mildly dangerous. Life's too short for boring weekends.",
+      passions: ["Skydiving", "Surfing", "Hiking"],
+      photos: [
+        { src: "/images/skydiving.jpg", label: "Skydiving in Hawaii" },
+        { src: "/images/hiking.jpg", label: "Hiking in Yosemite" },
+        { src: "/images/surfing.jpg", label: "Catching waves" },
+      ],
     },
   },
   skills: {
@@ -197,6 +206,190 @@ const cardVariants = {
   },
 };
 
+// Personal card component with photo gallery for Play mode
+function PersonalCard({ mode, cards }: { mode: "work" | "play"; cards: typeof workCards | typeof playCards }) {
+  const [currentPhoto, setCurrentPhoto] = useState(0);
+  const photos = mode === "play" && "photos" in cards.personal.content
+    ? (cards.personal.content as typeof playCards.personal.content).photos
+    : null;
+
+  const nextPhoto = () => {
+    if (photos) setCurrentPhoto((prev) => (prev + 1) % photos.length);
+  };
+
+  const prevPhoto = () => {
+    if (photos) setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
+  };
+
+  // Play mode: larger card with photos
+  if (mode === "play" && photos) {
+    return (
+      <motion.div
+        variants={cardVariants}
+        className={cn(
+          "lg:col-span-2 rounded-3xl overflow-hidden",
+          cards.personal.bgColor,
+          "border",
+          cards.personal.borderColor,
+          "shadow-sm hover:shadow-md transition-shadow"
+        )}
+        whileHover={{ scale: 1.01, y: -3 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="p-8 h-full">
+          <div className="flex items-center gap-3 mb-6">
+            <div
+              className={cn(
+                "p-3 rounded-2xl shadow-sm",
+                cards.personal.iconBg
+              )}
+            >
+              <cards.personal.icon className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-xl font-semibold text-cream-800">
+              {cards.personal.title}
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Text content */}
+            <div className="flex flex-col justify-center">
+              <h4 className="text-2xl font-bold text-cream-800 mb-3">
+                {cards.personal.content.headline}
+              </h4>
+
+              <p className="text-cream-600 leading-relaxed mb-6">
+                {cards.personal.content.story}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {cards.personal.content.passions.map((passion, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1.5 rounded-full bg-white/60 text-cream-700 text-sm border border-white/80 shadow-sm"
+                  >
+                    {passion}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Photo carousel */}
+            <div className="relative">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-cream-200 shadow-lg">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentPhoto}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -50 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={photos[currentPhoto].src}
+                      alt={photos[currentPhoto].label}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Navigation buttons */}
+                <button
+                  onClick={prevPhoto}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 backdrop-blur-sm text-cream-700 hover:bg-white transition-colors shadow-md"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextPhoto}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 backdrop-blur-sm text-cream-700 hover:bg-white transition-colors shadow-md"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+
+                {/* Photo label */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm text-sm text-cream-700 font-medium shadow-sm">
+                  {photos[currentPhoto].label}
+                </div>
+              </div>
+
+              {/* Dots indicator */}
+              <div className="flex justify-center gap-2 mt-4">
+                {photos.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentPhoto(i)}
+                    className={cn(
+                      "w-2 h-2 rounded-full transition-all",
+                      i === currentPhoto
+                        ? "bg-accent-emerald w-6"
+                        : "bg-cream-300 hover:bg-cream-400"
+                    )}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Work mode: simple card
+  return (
+    <motion.div
+      variants={cardVariants}
+      className={cn(
+        "rounded-3xl overflow-hidden",
+        cards.personal.bgColor,
+        "border",
+        cards.personal.borderColor,
+        "shadow-sm hover:shadow-md transition-shadow"
+      )}
+      whileHover={{ scale: 1.02, y: -5 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="p-8 h-full flex flex-col">
+        <div className="flex items-center gap-3 mb-6">
+          <div
+            className={cn(
+              "p-3 rounded-2xl shadow-sm",
+              cards.personal.iconBg
+            )}
+          >
+            <cards.personal.icon className="w-6 h-6 text-white" />
+          </div>
+          <h3 className="text-xl font-semibold text-cream-800">
+            {cards.personal.title}
+          </h3>
+        </div>
+
+        <h4 className="text-xl font-bold text-cream-800 mb-3">
+          {cards.personal.content.headline}
+        </h4>
+
+        <p className="text-cream-600 leading-relaxed mb-6 flex-grow">
+          {cards.personal.content.story}
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {cards.personal.content.passions.map((passion, i) => (
+            <span
+              key={i}
+              className="px-3 py-1.5 rounded-full bg-white/60 text-cream-700 text-sm border border-white/80 shadow-sm"
+            >
+              {passion}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function BentoGrid({ mode }: BentoGridProps) {
   const cards = mode === "work" ? workCards : playCards;
 
@@ -235,11 +428,12 @@ export function BentoGrid({ mode }: BentoGridProps) {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {/* Card 1: Professional - spans 2 columns */}
+          {/* Card 1: Professional - spans 2 columns in Work, 1 in Play */}
           <motion.div
             variants={cardVariants}
             className={cn(
-              "lg:col-span-2 rounded-3xl overflow-hidden",
+              "rounded-3xl overflow-hidden",
+              mode === "work" ? "lg:col-span-2" : "",
               cards.professional.bgColor,
               "border",
               cards.professional.borderColor,
@@ -303,54 +497,8 @@ export function BentoGrid({ mode }: BentoGridProps) {
             </div>
           </motion.div>
 
-          {/* Card 2: Personal */}
-          <motion.div
-            variants={cardVariants}
-            className={cn(
-              "rounded-3xl overflow-hidden",
-              cards.personal.bgColor,
-              "border",
-              cards.personal.borderColor,
-              "shadow-sm hover:shadow-md transition-shadow"
-            )}
-            whileHover={{ scale: 1.02, y: -5 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="p-8 h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-6">
-                <div
-                  className={cn(
-                    "p-3 rounded-2xl shadow-sm",
-                    cards.personal.iconBg
-                  )}
-                >
-                  <cards.personal.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-cream-800">
-                  {cards.personal.title}
-                </h3>
-              </div>
-
-              <h4 className="text-xl font-bold text-cream-800 mb-3">
-                {cards.personal.content.headline}
-              </h4>
-
-              <p className="text-cream-600 leading-relaxed mb-6 flex-grow">
-                {cards.personal.content.story}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {cards.personal.content.passions.map((passion, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1.5 rounded-full bg-white/60 text-cream-700 text-sm border border-white/80 shadow-sm"
-                  >
-                    {passion}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          {/* Card 2: Personal - spans 2 columns in Play mode */}
+          <PersonalCard mode={mode} cards={cards} />
 
           {/* Card 3: Skills - spans all 3 columns */}
           <motion.div
