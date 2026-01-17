@@ -102,6 +102,22 @@ const playProjects: Project[] = [
     techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Canvas API"],
     color: "bg-pastel-pink",
     icon: Sparkles,
+    links: { github: "https://github.com/zeus1292/personal-portfolio" },
+  },
+  {
+    id: "resolution-tracker",
+    title: "Resolution Tracker",
+    subtitle: "iOS App",
+    description:
+      "A gamified goal-tracking app that helps you stick to resolutions with streaks, points, badges, and partner accountability. Because willpower alone wasn't cutting it.",
+    problem:
+      "New Year's resolutions have a 92% failure rate. Needed something beyond sticky notes and guilt to actually follow through.",
+    solution:
+      "Built a mobile app with daily/weekly/monthly goal tracking, streak multipliers, 20+ achievement badges, and partner challenges to keep you accountable.",
+    impact: "Currently tracking my own resolutions. Streak: still alive. Badges: collected.",
+    techStack: ["React Native", "Expo", "Firebase", "TypeScript", "Push Notifications"],
+    color: "bg-pastel-purple",
+    icon: Zap,
     links: { github: "#" },
   },
   {

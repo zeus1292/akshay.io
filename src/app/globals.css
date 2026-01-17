@@ -91,6 +91,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Work Mode - Muted, Professional */
+.mode-work {
+  background: linear-gradient(135deg, #FFFBF5 0%, #FEF7EC 50%, #F5F0E8 100%);
+  transition: background 0.5s ease-in-out;
+}
+
+/* Play Mode - Vibrant, Dynamic */
+.mode-play {
+  background: linear-gradient(135deg, #FDF4FF 0%, #FAE8FF 25%, #E0F2FE 50%, #ECFDF5 75%, #FEF9C3 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+  transition: background 0.5s ease-in-out;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Play mode vibrant accents */
+.mode-play .bg-pastel-pink {
+  background-color: #FBCFE8 !important;
+}
+
+.mode-play .bg-pastel-blue {
+  background-color: #BAE6FD !important;
+}
+
+.mode-play .bg-pastel-purple {
+  background-color: #DDD6FE !important;
+}
+
+.mode-play .bg-pastel-mint {
+  background-color: #A7F3D0 !important;
+}
+
+.mode-play .bg-pastel-peach {
+  background-color: #FED7AA !important;
+}
+
+.mode-play .bg-pastel-yellow {
+  background-color: #FDE68A !important;
+}
+
 /* Utility Classes */
 @utility glass-light {
   background: rgba(255, 255, 255, 0.7);

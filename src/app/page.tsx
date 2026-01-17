@@ -13,7 +13,7 @@ export default function Home() {
   const [mode, setMode] = useState<"work" | "play">("work");
 
   return (
-    <main className="relative">
+    <main className={`relative min-h-screen ${mode === "work" ? "mode-work" : "mode-play"}`}>
       {/* Lightweight pixel art animation running in background */}
       <PixelBackground />
 
