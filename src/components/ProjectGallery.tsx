@@ -120,52 +120,6 @@ const playProjects: Project[] = [
     icon: Zap,
     links: { github: "#" },
   },
-  {
-    id: "adventure-tracker",
-    title: "Adventure Tracker",
-    subtitle: "Travel & Outdoor App",
-    description:
-      "A personal app to log and visualize all my skydiving jumps, surf sessions, and hiking adventures with photos, stats, and way too many details.",
-    problem:
-      "I kept forgetting which mountains I've climbed and how many times I've almost died doing 'fun' activities.",
-    solution:
-      "Built a beautiful tracker with maps, weather data, and a 'near-death experience' counter (currently at 7).",
-    impact: "47 hikes logged, 23 surf sessions, 12 skydives, infinite bragging rights",
-    techStack: ["React Native", "MapBox", "Firebase", "Adrenaline", "Sunscreen"],
-    color: "bg-pastel-mint",
-    icon: Zap,
-  },
-  {
-    id: "coffee-optimizer",
-    title: "Coffee Optimizer 3000",
-    subtitle: "Serious Business",
-    description:
-      "An over-engineered system to track, rate, and optimize my coffee brewing. Yes, I have a spreadsheet. Yes, it has formulas. No, I'm not sorry.",
-    problem:
-      "My morning coffee was inconsistent. Some days perfect, some days tragic. This was unacceptable.",
-    solution:
-      "IoT sensors on my coffee setup, ML model to predict optimal brew parameters, and a dashboard that would make NASA jealous.",
-    impact: "Coffee quality up 34%, morning mood up 89%, partner's patience down 12%",
-    techStack: ["Raspberry Pi", "Python", "InfluxDB", "Obsession", "Caffeine"],
-    color: "bg-pastel-peach",
-    icon: Brain,
-  },
-  {
-    id: "game-night-coordinator",
-    title: "Game Night Coordinator",
-    subtitle: "Solving Real Problems",
-    description:
-      "An app that finally answers 'what game should we play?' by matching group size, mood, time available, and who's still salty from last week's betrayal.",
-    problem:
-      "Spending 45 minutes deciding what to play, then 15 minutes actually playing before someone has to leave.",
-    solution:
-      "Smart recommendation engine that considers player preferences, game length, complexity, and historical grudge data.",
-    impact: "Game selection time: 45min → 2min. Friend group: Still intact (barely)",
-    techStack: ["Next.js", "PostgreSQL", "Friendship", "Board Games", "Snacks API"],
-    color: "bg-pastel-yellow",
-    icon: Users,
-    links: { demo: "#", github: "#" },
-  },
 ];
 
 const containerVariants = {
