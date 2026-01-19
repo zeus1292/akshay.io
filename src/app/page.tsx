@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className={`relative min-h-screen ${mode === "work" ? "mode-work" : "mode-play"}`}>
       {/* Lightweight pixel art animation running in background */}
-      <PixelBackground />
+      <PixelBackground mode={mode} />
 
       {/* Main content sections */}
       <Hero mode={mode} onModeToggle={setMode} />
