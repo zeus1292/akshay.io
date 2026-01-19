@@ -356,11 +356,11 @@ export function ProjectGallery({ mode }: ProjectGalleryProps) {
 
         {/* Projects Grid */}
         <motion.div
+          key={mode}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-          variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          animate="visible"
+          variants={containerVariants}
         >
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
