@@ -6,8 +6,8 @@ import { BentoGrid } from "@/components/BentoGrid";
 import { PixelBackground } from "@/components/PixelBackground";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { InterestsMarquee } from "@/components/InterestsMarquee";
-import { SkillsBubbles } from "@/components/SkillsBubbles";
-import { PMHustleGame } from "@/components/PMHustleGame";
+import { SkillsMarquee } from "@/components/SkillsMarquee";
+import { BugSquasherGame } from "@/components/BugSquasherGame";
 
 export default function Home() {
   const [mode, setMode] = useState<"work" | "play">("work");
@@ -24,15 +24,15 @@ export default function Home() {
       {/* Professional Experience (Work) or Personal Projects (Play) */}
       <ProjectGallery mode={mode} />
 
-      {/* Work mode: Skills Bubbles | Play mode: Interests Marquee */}
+      {/* Work mode: Skills Marquee | Play mode: Interests Marquee */}
       {mode === "work" ? (
-        <SkillsBubbles />
+        <SkillsMarquee />
       ) : (
         <InterestsMarquee mode={mode} />
       )}
 
-      {/* Mini-game - shown in both modes with different tone */}
-      <PMHustleGame mode={mode} />
+      {/* Mini-game - only shown in Play mode */}
+      {mode === "play" && <BugSquasherGame mode={mode} />}
 
       {/* Footer */}
       <footer className="py-12 px-4 text-center border-t border-cream-200">

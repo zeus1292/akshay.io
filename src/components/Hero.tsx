@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ModeToggle } from "@/components/ui/toggle";
+import { AnimatedAvatar } from "@/components/AnimatedAvatar";
 import { ArrowDown, Github, Linkedin, Mail, Coffee, MapPin } from "lucide-react";
 
 interface HeroProps {
@@ -97,6 +98,16 @@ export function Hero({ mode, onModeToggle }: HeroProps) {
 
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto">
+        {/* Animated Avatar */}
+        <motion.div
+          className="flex justify-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <AnimatedAvatar mode={mode} />
+        </motion.div>
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
