@@ -73,17 +73,13 @@ export function AnimatedAvatar({ mode }: AnimatedAvatarProps) {
             "relative w-full h-full",
             mode === "play" && "animate-avatar-filter"
           )}
-          style={{
-            filter: mode === "work"
-              ? "saturate(1.1) contrast(1.05)"
-              : "saturate(1.3) contrast(1.1) brightness(1.05)",
-          }}
         >
           <Image
-            src="/images/profile.jpg"
+            src="/images/cartoon-avatar.png"
             alt="Akshay Kumar"
             fill
-            className="object-cover"
+            className="object-cover object-top"
+            style={{ objectPosition: "center 15%" }}
             priority
           />
 

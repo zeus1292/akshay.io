@@ -100,7 +100,7 @@ export function Hero({ mode, onModeToggle }: HeroProps) {
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Animated Avatar */}
         <motion.div
-          className="flex justify-center mb-8"
+          className="flex justify-center mb-6 mt-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
