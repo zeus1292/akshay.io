@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { BentoGrid } from "@/components/BentoGrid";
 import { PixelBackground } from "@/components/PixelBackground";
 import { ProjectGallery } from "@/components/ProjectGallery";
+import { MyJourney } from "@/components/MyJourney";
 import { InterestsMarquee } from "@/components/InterestsMarquee";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { BugSquasherGame } from "@/components/BugSquasherGame";
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Professional Experience (Work) or Personal Projects (Play) */}
       <ProjectGallery mode={mode} />
+
+      {/* Career Timeline */}
+      <MyJourney mode={mode} />
 
       {/* Work mode: Skills Marquee | Play mode: Interests Marquee */}
       {mode === "work" ? (
