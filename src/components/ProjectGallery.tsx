@@ -15,6 +15,7 @@ import {
   BarChart3,
   Users,
   Zap,
+  ShoppingCart,
 } from "lucide-react";
 
 interface ProjectGalleryProps {
@@ -39,6 +40,22 @@ interface Project {
 }
 
 const workProjects: Project[] = [
+  {
+    id: "retail-right",
+    title: "Retail Right",
+    subtitle: "Personal Project",
+    description:
+      "A multi-agent product matching tool that lets users search via text, URL, or image input, with intelligent price comparison across retailers using CLIP embeddings and hybrid search.",
+    problem:
+      "Finding the best price for a product requires manually searching multiple retailers. Image-based search is unreliable, and there's no unified way to compare prices across sources.",
+    solution:
+      "Built a LangGraph-powered multi-agent system with CLIP image search (512-dim embeddings), hybrid SQL + vector search via Reciprocal Rank Fusion, and Tavily-powered live web search with caching.",
+    impact: "Unified smart search across text/URL/image inputs, ~50ms image processing, validated results from 50+ retail domains",
+    techStack: ["LangGraph", "CLIP", "FastAPI", "ChromaDB", "OpenAI", "Tavily", "LangSmith"],
+    color: "bg-pastel-peach",
+    icon: ShoppingCart,
+    links: { github: "https://github.com/zeus1292/price_compare" },
+  },
   {
     id: "natural-language-screener",
     title: "Natural Language Screener",
