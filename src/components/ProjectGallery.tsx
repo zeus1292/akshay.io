@@ -16,6 +16,7 @@ import {
   Users,
   Zap,
   ShoppingCart,
+  Search,
 } from "lucide-react";
 
 interface ProjectGalleryProps {
@@ -55,6 +56,22 @@ const workProjects: Project[] = [
     color: "bg-pastel-peach",
     icon: ShoppingCart,
     links: { github: "https://github.com/zeus1292/price_compare" },
+  },
+  {
+    id: "ml-field-search",
+    title: "ML-Powered Field Search",
+    subtitle: "S&P Global",
+    description:
+      "A machine learning backed search endpoint that leverages transfer learning from a Microsoft-trained model to intelligently surface the most relevant fields for user queries.",
+    problem:
+      "Field search across large datasets returned generic, one-size-fits-all results, ignoring user-specific usage patterns and domain context, leading to poor relevance and slow query resolution.",
+    solution:
+      "Designed a hybrid framework combining transfer learning from a Microsoft pre-trained model with custom business rules and usage-driven intelligence to deliver profile-specific, contextually ranked field results.",
+    impact:
+      "Improved search relevance by 45% and query performance by 50%, enabling faster and more accurate data discovery across analyst workflows",
+    techStack: ["Transfer Learning", "Python", "NLP", "Elasticsearch", "Custom Rules Engine", "REST APIs"],
+    color: "bg-pastel-yellow",
+    icon: Search,
   },
   {
     id: "natural-language-screener",
