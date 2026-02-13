@@ -34,6 +34,7 @@ interface Project {
   techStack: string[];
   color: string;
   icon: typeof Brain;
+  image?: string;
   links?: {
     demo?: string;
     github?: string;
@@ -117,6 +118,7 @@ const workProjects: Project[] = [
     techStack: ["Python", "LangChain", "OpenAI", "arXiv API", "Web Scraping"],
     color: "bg-pastel-mint",
     icon: Rocket,
+    image: "/images/projects/research-lens.png",
   },
 ];
 
@@ -192,6 +194,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       )}
       whileHover={{ y: -5 }}
     >
+      {project.image && (
+        <div className="border-b border-cream-200/50">
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            className="w-full h-48 object-cover object-top"
+          />
+        </div>
+      )}
       <div className="p-6 sm:p-8">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
