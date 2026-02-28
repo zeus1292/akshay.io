@@ -17,6 +17,7 @@ import {
   Zap,
   ShoppingCart,
   Search,
+  Network,
 } from "lucide-react";
 
 interface ProjectGalleryProps {
@@ -57,6 +58,23 @@ const workProjects: Project[] = [
     color: "bg-pastel-peach",
     icon: ShoppingCart,
     links: { github: "https://github.com/zeus1292/price_compare" },
+  },
+  {
+    id: "investor-lens",
+    title: "InvestorLens",
+    subtitle: "Personal Project",
+    description:
+      "A persona-driven company intelligence search engine for the Enterprise AI & Data Infrastructure sector — where the same query returns fundamentally different results depending on whether you're a Value Investor, PE Firm, Growth VC, Strategic Acquirer, or Enterprise Buyer.",
+    problem:
+      "Investors and analysts evaluate companies through completely different lenses, but existing search tools return the same generic results regardless of who's asking — a VC looking for disruptors gets the same list as a value investor hunting for moats.",
+    solution:
+      "Built a full-stack search engine powered by a Neo4j knowledge graph (37 companies, 384 edges), LangGraph orchestration, and 5 persona scoring engines with custom weight configurations. GPT-4o generates natural language explanations tailored to each persona's priorities, with a LangSmith evaluation suite to validate quality.",
+    impact:
+      "5 distinct investor personas with verified differentiated rankings, 37 companies across 6 sectors, 8 LangSmith evaluators across 6 demo queries, deployed on Vercel + Render + Neo4j Aura",
+    techStack: ["LangGraph", "Neo4j", "FastAPI", "GPT-4o", "React", "LangSmith", "SEC EDGAR API", "Vite"],
+    color: "bg-pastel-lavender",
+    icon: Network,
+    links: { github: "https://github.com/zeus1292/investorlens" },
   },
   {
     id: "ml-field-search",

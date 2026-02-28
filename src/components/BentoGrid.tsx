@@ -138,7 +138,7 @@ const playCards = {
       passions: ["Skydiving", "Surfing", "Hiking"],
       photos: [
         { src: "/images/skydiving.jpg", label: "Skydiving in Hawaii" },
-        { src: "/images/hiking.jpg", label: "Hiking in Yosemite" },
+        { src: "/images/hiking.jpg", label: "Hiking at Angel's Landing" },
         { src: "/images/surfing.jpg", label: "Catching waves" },
       ],
     },
