@@ -68,10 +68,10 @@ const workProjects: Project[] = [
     problem:
       "Investors and analysts evaluate companies through completely different lenses, but existing search tools return the same generic results regardless of who's asking — a VC looking for disruptors gets the same list as a value investor hunting for moats.",
     solution:
-      "Built a full-stack search engine powered by a Neo4j knowledge graph (37 companies, 384 edges), LangGraph orchestration, and 5 persona scoring engines with custom weight configurations. GPT-4o generates natural language explanations tailored to each persona's priorities, with a LangSmith evaluation suite to validate quality.",
+      "Built a full-stack search engine with a Neo4j knowledge graph (37 companies, 384 edges) and a GPT-4o-mini ReAct agent that dynamically selects graph traversal strategies per query and persona. A deterministic scoring layer then ranks candidates using persona-specific weights, with optional GPT-4o narrative explanations. CI/CD pipeline runs ruff lint and structural evaluations on every push to main via GitHub Actions.",
     impact:
-      "5 distinct investor personas with verified differentiated rankings, 37 companies across 6 sectors, 8 LangSmith evaluators across 6 demo queries, deployed on Vercel + Render + Neo4j Aura",
-    techStack: ["LangGraph", "Neo4j", "FastAPI", "GPT-4o", "React", "LangSmith", "SEC EDGAR API", "Vite"],
+      "5 distinct investor personas with verified differentiated rankings, 37 companies across 6 sectors, 8 LangSmith evaluators across 6 demo queries, automated regression tests on every commit, deployed on Vercel + Render + Neo4j Aura",
+    techStack: ["LangGraph", "Neo4j", "FastAPI", "GPT-4o", "React", "LangSmith", "GitHub Actions", "SEC EDGAR API", "Vite"],
     color: "bg-pastel-lavender",
     icon: Network,
     links: { github: "https://github.com/zeus1292/investorlens" },
