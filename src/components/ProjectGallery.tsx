@@ -74,6 +74,7 @@ const workProjects: Project[] = [
     techStack: ["LangGraph", "Neo4j", "FastAPI", "GPT-4o", "React", "LangSmith", "GitHub Actions", "SEC EDGAR API", "Vite"],
     color: "bg-pastel-lavender",
     icon: Network,
+    image: "/images/investorlens.png",
     links: { github: "https://github.com/zeus1292/investorlens" },
   },
   {
