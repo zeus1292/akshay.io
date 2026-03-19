@@ -35,11 +35,11 @@ interface JourneyMilestone {
 const workMilestones: JourneyMilestone[] = [
   {
     id: "consulting",
-    year: "May 2025 - Present",
+    year: "Jun 2025 - Present",
     title: "AI Product Manager & Builder",
     company: "Contract/Consulting",
     description:
-      "Building Agentic AI solutions and advising on product-market fit for Enterprise SaaS and Fintech sectors.",
+      "Shipped 4 AI-powered applications end-to-end and designed RL evaluation environments for frontier AI labs.",
     icon: Rocket,
     color: {
       iconBg: "bg-accent-violet",
@@ -47,9 +47,9 @@ const workMilestones: JourneyMilestone[] = [
       dot: "bg-accent-violet",
     },
     highlights: [
-      "Productized multi-modal AI agents (Smart Chef, Research Lens)",
-      "Established LLM-Ops framework with 20% latency reduction",
-      "Advising 10+ VC and Builder Summits on AI adoption",
+      "Shipped 4 AI apps end-to-end: InvestorLens, Retail Right, Research Lens & more",
+      "Cut multi-agent response time 87% (30s→4s) via LangSmith trace optimization",
+      "Designed RL eval environments for OpenAI & Anthropic via Mercor",
     ],
   },
   {
@@ -85,9 +85,9 @@ const workMilestones: JourneyMilestone[] = [
       dot: "bg-accent-indigo",
     },
     highlights: [
-      "Delivered 69% user growth & 101% usage growth YoY",
-      "Pioneered RAG pipelines, boosting search accuracy 40%",
-      "Contributed to $2B+ annual platform revenue",
+      "Delivered 69% user growth & 101% usage growth YoY, contributing to $2B+ revenue",
+      "Pioneered RAG & LLM-enhanced search; boosted accuracy 40%, cut time-to-insight 30%",
+      "Owned Capital IQ Pro Screener — reduced analyst workflow time ~65%; improved adoption 55%",
     ],
   },
   {
@@ -168,7 +168,7 @@ const workMilestones: JourneyMilestone[] = [
 const playMilestones: JourneyMilestone[] = [
   {
     id: "consulting",
-    year: "May 2025 - Present",
+    year: "Jun 2025 - Present",
     title: "Chief AI Whisperer",
     company: "Self-employed (a.k.a. Coffee Shop Regular)",
     description:
@@ -180,9 +180,9 @@ const playMilestones: JourneyMilestone[] = [
       dot: "bg-accent-violet",
     },
     highlights: [
-      "Built a chef AI (still can't cook IRL)",
-      "Attended 10+ summits for the free snacks",
-      "20% faster at making AI go brrr",
+      "Built 4 AI apps (still can't make a decent omelette IRL)",
+      "Made AI 87% faster — coffee budget reallocated accordingly",
+      "Graded AI agents for OpenAI & Anthropic (yes, really)",
     ],
   },
   {

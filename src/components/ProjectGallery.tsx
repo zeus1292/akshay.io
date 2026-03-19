@@ -173,7 +173,7 @@ const playProjects: Project[] = [
     techStack: ["React Native", "Expo", "Firebase", "TypeScript", "Push Notifications"],
     color: "bg-pastel-purple",
     icon: Zap,
-    links: { github: "#" },
+    links: { github: "https://github.com/zeus1292/resolution-tracker" },
   },
 ];
 

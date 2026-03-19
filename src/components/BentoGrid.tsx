@@ -39,9 +39,9 @@ const workCards = {
     content: {
       headline: "Enterprise AI Product Leader",
       bullets: [
-        "10+ years shipping AI products at S&P Global, C3 AI & startups",
-        "Built RAG pipelines and Agentic workflows serving Fortune 500 clients",
-        "Columbia Business Analytics grad who turns complex AI into real impact",
+        "10+ years shipping AI products at S&P Global, C3 AI & beyond",
+        "Built multi-agent systems, RAG pipelines & RL eval environments for Fortune 500s and frontier labs",
+        "Columbia Business Analytics grad — 4 AI apps shipped end-to-end in 2025",
       ],
       companies: [
         { name: "S&P Global", role: "Sr. Product Manager" },
@@ -72,32 +72,32 @@ const workCards = {
     content: {
       categories: [
         {
-          name: "AI/ML",
+          name: "AI Systems",
           icon: Brain,
           color: "text-accent-violet",
           bgColor: "bg-pastel-purple/50",
-          skills: ["RAG", "LangGraph", "crewAI", "Fine-tuning"],
+          skills: ["RAG Pipelines", "LangGraph", "crewAI", "Vector Search", "Multi-Modal", "Prompt Engineering"],
         },
         {
-          name: "Infrastructure",
+          name: "LLMOps & Eval",
           icon: Cloud,
           color: "text-accent-indigo",
           bgColor: "bg-pastel-blue/50",
-          skills: ["LangSmith", "AWS", "Azure", "Docker"],
+          skills: ["LangSmith", "Datadog", "LLM-as-a-Judge", "LLM Fine-Tuning", "Python", "SQL"],
         },
         {
-          name: "Data",
+          name: "Data & Tooling",
           icon: Database,
           color: "text-accent-emerald",
           bgColor: "bg-pastel-mint/50",
-          skills: ["SQL", "Python", "Snowflake", "dbt"],
+          skills: ["Cursor", "Replit", "Data Modeling", "Snowflake", "AWS", "dbt"],
         },
         {
-          name: "Product",
+          name: "Strategy & UX",
           icon: Cpu,
           color: "text-accent-coral",
           bgColor: "bg-pastel-peach/50",
-          skills: ["Figma", "Jira", "A/B Testing", "Roadmapping"],
+          skills: ["HITL Workflows", "AI Trust & Safety", "A/B Testing", "Figma", "Miro"],
         },
       ],
     },

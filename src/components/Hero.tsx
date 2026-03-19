@@ -14,7 +14,7 @@ const workContent = {
   headline: "AI Product Manager",
   subheadline: "& Builder",
   description:
-    "10+ years building AI-powered products at S&P Global, C3 AI, and beyond. I turn complex AI capabilities into enterprise solutions that drive real business impact—from RAG pipelines to Agentic workflows.",
+    "10+ years shipping AI products at S&P Global, C3 AI, and beyond. I build and evaluate production-grade AI—from multi-agent systems and RAG pipelines to RL evaluation environments for frontier labs.",
   badge: "Open to opportunities",
   location: "Foster City, CA",
 };
