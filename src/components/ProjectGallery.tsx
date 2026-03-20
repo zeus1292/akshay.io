@@ -57,6 +57,7 @@ const workProjects: Project[] = [
     techStack: ["LangGraph", "CLIP", "FastAPI", "ChromaDB", "OpenAI", "Tavily", "LangSmith"],
     color: "bg-pastel-peach",
     icon: ShoppingCart,
+    image: "/images/RetailRight.png",
     links: { github: "https://github.com/zeus1292/price_compare" },
   },
   {
@@ -107,6 +108,7 @@ const workProjects: Project[] = [
     techStack: ["LLMs", "RAG", "Python", "SQL", "React", "AWS"],
     color: "bg-pastel-blue",
     icon: Brain,
+    image: "/images/image002.PNG",
   },
   {
     id: "cowen-analytics",

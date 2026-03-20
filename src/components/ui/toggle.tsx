@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface ModeToggleProps {
@@ -12,6 +13,17 @@ interface ModeToggleProps {
 
 export function ModeToggle({ mode, onToggle, className }: ModeToggleProps) {
   const isPlay = mode === "play";
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowTooltip(true), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleToggle = () => {
+    setShowTooltip(false);
+    onToggle(isPlay ? "work" : "play");
+  };
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
@@ -26,10 +38,28 @@ export function ModeToggle({ mode, onToggle, className }: ModeToggleProps) {
 
       {/* Light Bulb Toggle */}
       <button
-        onClick={() => onToggle(isPlay ? "work" : "play")}
+        onClick={handleToggle}
         className="relative group"
         aria-label={`Switch to ${isPlay ? "work" : "play"} mode`}
       >
+        {/* Tooltip */}
+        <AnimatePresence>
+          {showTooltip && (
+            <motion.div
+              className="absolute -bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap pointer-events-none"
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <span className="inline-block px-2.5 py-1 rounded-full bg-cream-800/80 backdrop-blur-sm text-white text-[11px] font-medium tracking-wide shadow-sm">
+                Try clicking me ✦
+              </span>
+              {/* Arrow */}
+              <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 bg-cream-800/80 rotate-45 rounded-[1px]" />
+            </motion.div>
+          )}
+        </AnimatePresence>
         {/* Glow effect for Play mode */}
         {isPlay && (
           <motion.div
