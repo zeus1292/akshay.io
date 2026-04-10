@@ -11,6 +11,7 @@ import {
   Sparkles,
   Lightbulb,
   Coffee,
+  CreditCard,
 } from "lucide-react";
 
 interface MyJourneyProps {
@@ -34,8 +35,27 @@ interface JourneyMilestone {
 
 const workMilestones: JourneyMilestone[] = [
   {
+    id: "capitalone",
+    year: "May 2026 - Present",
+    title: "Product Manager, Credit Card Innovation",
+    company: "Capital One",
+    description:
+      "Consolidating fragmented analytical tools into a unified platform that streamlines credit card workflows and surfaces deeper insights for the Credit Card Innovation team.",
+    icon: CreditCard,
+    color: {
+      iconBg: "bg-accent-coral",
+      text: "text-accent-coral",
+      dot: "bg-accent-coral",
+    },
+    highlights: [
+      "Building a unified analytics platform consolidating multiple credit card workflows",
+      "Unlocking deeper insights across the Credit Card Innovation department",
+      "0-to-1 product development within Capital One's fintech ecosystem",
+    ],
+  },
+  {
     id: "consulting",
-    year: "Jun 2025 - Present",
+    year: "Jun 2025 - Mar 2026",
     title: "AI Product Manager & Builder",
     company: "Contract/Consulting",
     description:
@@ -167,8 +187,27 @@ const workMilestones: JourneyMilestone[] = [
 
 const playMilestones: JourneyMilestone[] = [
   {
+    id: "capitalone",
+    year: "May 2026 - Present",
+    title: "Professional Credit Card Nerd",
+    company: "Capital One (Back to NYC, Baby)",
+    description:
+      "Got a job at the bank that also sells coffee. Now I'm merging 12 spreadsheets into one beautiful app and calling it innovation. (It is, though.)",
+    icon: CreditCard,
+    color: {
+      iconBg: "bg-accent-coral",
+      text: "text-accent-coral",
+      dot: "bg-accent-coral",
+    },
+    highlights: [
+      "Turning analyst chaos into one sleek platform",
+      "Credit card innovation (it's not just points, I promise)",
+      "NYC chapter 2: electric boogaloo",
+    ],
+  },
+  {
     id: "consulting",
-    year: "Jun 2025 - Present",
+    year: "Jun 2025 - Mar 2026",
     title: "Chief AI Whisperer",
     company: "Self-employed (a.k.a. Coffee Shop Regular)",
     description:

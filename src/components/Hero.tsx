@@ -14,9 +14,9 @@ const workContent = {
   headline: "AI Product Manager",
   subheadline: "& Builder",
   description:
-    "10+ years shipping AI products at S&P Global, C3 AI, and beyond. I build and evaluate production-grade AI—from multi-agent systems and RAG pipelines to RL evaluation environments for frontier labs.",
-  badge: "Open to opportunities",
-  location: "Foster City, CA",
+    "10+ years shipping AI products at S&P Global, C3 AI, and beyond. Now at Capital One building a unified analytics platform for Credit Card Innovation—consolidating fragmented tools into a single application that unlocks deeper insights.",
+  badge: "PM @ Capital One",
+  location: "New York, NY",
 };
 
 const playContent = {
@@ -25,7 +25,7 @@ const playContent = {
   description:
     "Columbia grad who somehow convinced Fortune 500 companies to let me play with their data. When I'm not shipping AI products, I'm probably skydiving, surfing, or over-engineering my coffee setup.",
   badge: "Probably caffeinated",
-  location: "Bay Area, CA",
+  location: "New York, NY",
 };
 
 // Floating pastel blobs for visual interest

@@ -66,6 +66,7 @@ interface Project {
   techStack: string[];  // array of tech names (rendered as pills)
   color: string;        // Tailwind bg class (e.g., "bg-pastel-blue")
   icon: typeof Brain;   // Lucide React icon component
+  image?: string;       // optional header image (path relative to /public)
   links?: {             // optional
     demo?: string;
     github?: string;
@@ -77,6 +78,13 @@ interface Project {
 1. Choose an icon from `lucide-react` and import it at the top
 2. Pick an unused pastel color
 3. Add the object to `workProjects` or `playProjects` array
+4. Optionally add `image: "/images/<filename>"` — image renders as a full-width header above the card body (h-48, object-cover, object-top)
+
+**Current project images (stored in `/public/images/`):**
+- `investorlens.png` — InvestorLens (work)
+- `RetailRight.png` — Retail Right (work)
+- `image002.PNG` — Natural Language Screener (work)
+- `projects/research-lens.png` — Research Lens (work)
 
 ### Available Pastel Colors
 
@@ -102,6 +110,14 @@ npm run dev    # Start dev server
 npm run build  # Production build
 npm run lint   # ESLint
 ```
+
+### ModeToggle Tooltip (`src/components/ui/toggle.tsx`)
+
+- After 5 seconds on page load, a tooltip appears below the lightbulb: **"Try clicking me ✦"**
+- Implemented with `useEffect` + `setTimeout(5000)` and `AnimatePresence` for smooth fade-in/out
+- Tooltip dismisses immediately when the user clicks the toggle
+- Styled as a small dark pill badge (`bg-cream-800/80`) with a caret arrow pointing up at the bulb
+- `pointer-events-none` so it never blocks hover/click on the bulb itself
 
 ## Conventions
 
