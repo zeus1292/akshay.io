@@ -39,11 +39,12 @@ const workCards = {
     content: {
       headline: "Enterprise AI Product Leader",
       bullets: [
-        "10+ years shipping AI products at S&P Global, C3 AI & beyond",
+        "10+ years shipping AI products at S&P Global, C3 AI, Capital One & beyond",
         "Built multi-agent systems, RAG pipelines & RL eval environments for Fortune 500s and frontier labs",
         "Columbia Business Analytics grad — 4 AI apps shipped end-to-end in 2025",
       ],
       companies: [
+        { name: "Capital One", role: "Product Manager" },
         { name: "S&P Global", role: "Sr. Product Manager" },
         { name: "C3 AI", role: "Product Manager" },
         { name: "Cowen & Co", role: "Analyst" },
@@ -76,7 +77,7 @@ const workCards = {
           icon: Brain,
           color: "text-accent-violet",
           bgColor: "bg-pastel-purple/50",
-          skills: ["RAG Pipelines", "LangGraph", "crewAI", "Vector Search", "Multi-Modal", "Prompt Engineering"],
+          skills: ["RAG Pipelines", "LangGraph", "crewAI", "MCP", "A2A Protocol", "Agent Memory", "Tool Use / Function Calling", "Prompt Engineering"],
         },
         {
           name: "LLMOps & Eval",
