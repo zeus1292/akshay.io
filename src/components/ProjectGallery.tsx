@@ -18,6 +18,7 @@ import {
   ShoppingCart,
   Search,
   Network,
+  FlaskConical,
 } from "lucide-react";
 
 interface ProjectGalleryProps {
@@ -43,6 +44,22 @@ interface Project {
 }
 
 const workProjects: Project[] = [
+  {
+    id: "frontier-eval",
+    title: "Frontier Model Evaluation",
+    subtitle: "OpenAI & Anthropic",
+    description:
+      "Architected reinforcement learning environments and multi-dimensional evaluation frameworks for frontier AI labs, generating high-quality preference signals to improve model decision-making on complex professional tasks.",
+    problem:
+      "Frontier AI models lacked robust, domain-specific benchmarks for high-cognition professional tasks — particularly in product management and financial analysis — limiting their ability to make reliable, context-aware decisions in enterprise workflows.",
+    solution:
+      "Engineered structured RL training environments and evaluation rubrics that produced preference signals across PM scenarios (roadmap prioritization, stakeholder trade-offs) and financial analysis tasks (earnings interpretation, market signal reasoning). Frameworks were designed to surface nuanced reasoning quality, not just output accuracy.",
+    impact:
+      "Contributed directly to model training pipelines at two frontier AI labs; evaluation frameworks spanned product management and financial analysis domains, generating scalable preference data for RLHF/RLAIF training.",
+    techStack: ["RLHF", "RLAIF", "Evaluation Design", "LLM-as-a-Judge", "Preference Data", "Python", "Financial Analysis"],
+    color: "bg-pastel-mint",
+    icon: FlaskConical,
+  },
   {
     id: "retail-right",
     title: "Retail Right",
