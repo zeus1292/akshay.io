@@ -37,7 +37,7 @@ const workMilestones: JourneyMilestone[] = [
   {
     id: "capitalone",
     year: "May 2026 - Present",
-    title: "Product Manager, Credit Card Innovation",
+    title: "Product Manager - Card Credit Innovation",
     company: "Capital One",
     description:
       "Consolidating fragmented analytical tools into a unified platform that streamlines credit card workflows and surfaces deeper insights for the Credit Card Innovation team.",

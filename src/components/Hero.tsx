@@ -14,7 +14,7 @@ const workContent = {
   headline: "AI Product Manager",
   subheadline: "& Builder",
   description:
-    "10+ years shipping AI products at S&P Global, C3 AI, and beyond. Now at Capital One building a unified analytics platform for Credit Card Innovation—consolidating fragmented tools into a single application that unlocks deeper insights.",
+    "10+ years shipping AI products at S&P Global, C3 AI, and beyond. Now at Capital One building a unified analytics platform for Card Credit Innovation—consolidating fragmented tools into a single application that unlocks deeper insights.",
   badge: "PM @ Capital One",
   location: "New York, NY",
 };
